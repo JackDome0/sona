@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Sona ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,sans-serif;background:#090012;color:#fff;overflow-x:hidden}
+#bg{position:fixed;inset:0;background:
+radial-gradient(circle at 20% 20%,rgba(255,0,80,.35),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(255,215,0,.25),transparent 25%),
+linear-gradient(135deg,#130018,#300018,#140022);z-index:-2}
+.stars,.petals{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+.hero h1{font-size:clamp(3rem,8vw,6rem);animation:pulse 2s infinite}
+.hero h2{color:#ffd700;margin:15px 0}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.heart{font-size:80px;animation:beat 1s infinite}
+@keyframes beat{25%{transform:scale(1.15)}50%{transform:scale(1)}75%{transform:scale(1.15)}}
+.btn{padding:15px 35px;border-radius:40px;background:linear-gradient(45deg,#ff004c,#ffd700);color:white;text-decoration:none;font-weight:bold;box-shadow:0 0 25px #ff4d88}
+.section{padding:80px 20px}
+.glass{max-width:950px;margin:auto;background:rgba(255,255,255,.12);backdrop-filter:blur(15px);padding:35px;border-radius:25px;box-shadow:0 0 35px rgba(255,215,0,.25)}
+.title{text-align:center;font-size:3rem;color:#ffd700;margin-bottom:20px}
+.counter{text-align:center;font-size:1.5rem;padding:25px}
+.gallery-title{text-align:center;font-family:'Dancing Script',cursive;font-size:3rem;margin:40px 0}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;max-width:1200px;margin:auto;padding:20px}
+.card{display:flex;justify-content:center;animation:beat 2s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.card img{width:220px;height:220px;object-fit:cover;border-radius:30px;box-shadow:0 0 25px pink}
+.timeline{max-width:900px;margin:50px auto;padding:20px}
+.timeline{max-width:900px;margin:auto}
+.step{margin:25px 0;padding:20px;border-left:4px solid gold;background:rgba(255,255,255,.08)}
+.final{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.glow{font-size:4rem;color:#fff;text-shadow:0 0 15px #ff3b7a,0 0 30px gold}
+#fireworks{position:fixed;inset:0;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="bg"></div>
+<canvas class="stars"></canvas>
+<canvas id="fireworks"></canvas>
+
+<section class="hero">
+<div class="heart">❤️</div>
+<h1>Happy Anniversary</h1>
+<h2>Susmita (Sona) & Pintu</h2>
+<p>25 June 2026 • A Celebration of Love</p><br>
+<a href="#letter" class="btn">Open Our Love Story 💌</a>
+</section>
+
+<section id="letter" class="section">
+<div class="glass">
+<div class="title">My Dearest Sona ❤️</div>
+<p style="line-height:2;font-size:1.15rem">
+I remembered our anniversary... but somehow forgot to wish you on time. 😅<br><br>
+Yet there is one thing I never forget — how much I love you.
+Thank you for every smile, every laugh, every sacrifice, every dream, and every beautiful memory we have created together.
+You are my happiness, my peace, my strength, and the most beautiful chapter of my life.
+<br><br>
+Happy Anniversary, My Love. Forever Yours, <b>Pintu ❤️</b>
+</p>
+</div>
+</section>
+
+<div class="counter" id="counter"></div>
+
+<section class="section">
+<div class="title">Our Beautiful Memories 📸</div>
+<div class="gallery">
+<div class="card"><img src="photo1.jpg"></div>
+<div class="card"><img src="photo2.jpg"></div>
+<div class="card"><img src="photo3.jpg"></div>
+</div>
+</section>
+
+<section class="section">
+<div class="title">Our Journey 💕</div>
+<div class="timeline">
+<div class="step">✨ Two hearts, one beautiful story.</div>
+<div class="step">🌹 Every day with you is a blessing.</div>
+<div class="step">💖 Through happiness and challenges, together forever.</div>
+<div class="step">👑 My Queen, My Best Friend, My Sona.</div>
+</div>
+</section>
+
+<section class="final">
+<div class="glow">I LOVE YOU SONA ❤️</div>
+<h2 style="margin-top:20px">Happy Anniversary</h2>
+<p>Forever & Always • Pintu ❤️</p><br>
+<audio controls loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+</section>
+
+<script>
+const c=document.querySelector('.stars'),ctx=c.getContext('2d');
+function rs(){c.width=innerWidth;c.height=innerHeight} rs(); onresize=rs;
+let stars=[...Array(200)].map(()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2}));
+(function a(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='white';stars.forEach(s=>{ctx.globalAlpha=Math.random();ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,7);ctx.fill();});requestAnimationFrame(a)})();
+
+for(let i=0;i<50;i++){
+ let p=document.createElement('div');
+ p.innerHTML=Math.random()>.5?'🌹':'❤️';
+ p.style.position='fixed';p.style.left=Math.random()*100+'%';
+ p.style.top='-50px';p.style.fontSize=(20+Math.random()*20)+'px';
+ p.style.animation=`fall ${6+Math.random()*8}s linear infinite`;
+ p.style.animationDelay=Math.random()*8+'s';
+ document.body.appendChild(p);
+}
+let st=document.createElement('style');
+st.innerHTML='@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}';
+document.head.appendChild(st);
+
+const start=new Date('2026-06-25');
+setInterval(()=>{
+ let d=Math.floor((Date.now()-start)/(1000*60*60*24));
+ document.getElementById('counter').innerHTML='❤️ Our Love Keeps Growing Every Day ❤️';
+},1000);
+
+// simple fireworks
+const fw=document.getElementById('fireworks'),fctx=fw.getContext('2d');
+fw.width=innerWidth;fw.height=innerHeight;
+setInterval(()=>{
+ let x=Math.random()*fw.width,y=Math.random()*fw.height/2;
+ for(let i=0;i<40;i++){
+   setTimeout(()=>{
+     fctx.fillStyle=['#ffd700','#ff4d88','#fff'][i%3];
+     fctx.fillRect(x+Math.cos(i)*i*3,y+Math.sin(i)*i*3,3,3);
+   },10);
+ }
+ setTimeout(()=>fctx.clearRect(0,0,fw.width,fw.height),800);
+},2500);
+</script>
+</body>
+</html>
